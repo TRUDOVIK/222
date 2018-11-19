@@ -1,0 +1,20 @@
+def system(a):
+    for j in range(2, a-1):
+        m = a
+        s = []
+        while m != 0:
+            s.insert(0, str(m % j))
+            m = m // j
+        d = s
+        t = 0
+        for h in range(len(d) // 2):
+            if d[h] == d[-1-h]:
+                t += 1
+        if t == len(d)//2:
+            print(d,j)
+            return('NO')
+    return('YES')
+n = int(input())
+for i in range(n):
+    x = int(input())
+    print(system(x))
